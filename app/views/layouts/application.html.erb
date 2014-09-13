@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>LindaApp</title>
+  <title>Linda Armstrong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext',
+  media: 'all' %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= render 'layouts/header'%>
-<%= yield %>
+<div class="container-fluid">
+	<%= yield %>
+</div>
 <%= render 'layouts/footer'%>
 </body>
 </html>
