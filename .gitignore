@@ -17,3 +17,6 @@
 
 # Ignore OS X index files.
 *.DS_Store
+
+# Ignore local env settings
+.env
