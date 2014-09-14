@@ -16,6 +16,9 @@
   		<li><%= link_to 'Links',links_path %></li>
   		<li><%= link_to 'Bio', bio_path %></li>
   		<li><%= link_to 'Contact', contact_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to 'Log out', logout_path, method: :delete %></li>
+      <% end %>
   	</ul>
   </div>
 </header>
