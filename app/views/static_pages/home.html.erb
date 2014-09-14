@@ -1,2 +1,33 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="row" id="galleries">
+	<div class="col-md-8" >
+		<div class="col-sm-6">
+			<%= link_to '#' do  %>
+				<% image_tag('photo 1.jpg', class: 'img-responsive img-rounded') %>
+			<% end %>
+		</div>
+
+		<div class="col-sm-6">
+			<%= link_to '#' do  %>
+				<% image_tag 'beach.jpg', class: 'img-responsive img-rounded' %>
+			<% end %>
+		</div>
+
+		<div class="col-sm-6">
+			<%= link_to '#' do  %>
+				<% image_tag '1.CollectingExcursions.jpg', class: 'img-responsive img-rounded' %>
+			<% end %>
+		</div>
+
+		<div class="col-sm-6">
+			<%= link_to '#' do  %>
+				<% image_tag 'Agaric.jpg', class: 'img-responsive img-rounded' %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<%= link_to '#' do  %>
+			<% image_tag 'WooleyAdelgid.jpg', class: 'img-responsive img-rounded' %>
+		<% end %>
+	</div>
+</div>

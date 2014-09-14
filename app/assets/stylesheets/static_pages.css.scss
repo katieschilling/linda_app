@@ -1,5 +1,15 @@
+body {
+	-webkit-font-smoothing: antialiased;
+					font-smoothing: antialiased;
+					text-rendering: optimizeLegibility;
+}
+
 header {
 	text-transform: uppercase;
+
+	.navbar-nav {
+		margin-bottom: 50px;
+	}
 
 	.navbar-brand {
 		letter-spacing: 3px;
@@ -7,5 +17,20 @@ header {
 
 	li a {
 		letter-spacing: 1px;
+	}
+}
+
+#galleries {
+	img {
+		opacity: 0.6;
+		margin: 20px 0;
+
+		@media (min-width: 768px) {
+			margin: 0 0 26px 0;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
