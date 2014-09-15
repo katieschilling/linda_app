@@ -7,5 +7,5 @@ def dropbox
 end
 
 def dropbox_directories
-	dropbox.ls('images_website')
+	dropbox.ls('images_website').reject { |i| i.path == 'images_website/thumbs' }
 end

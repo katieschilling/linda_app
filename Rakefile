@@ -10,14 +10,10 @@ Dropbox::API::Tasks.install
 namespace :dropbox do
   desc 'Generate thumbnails'
   task :thumbnails => :environment do
-    dir = Rails.root.join 'app', 'assets', 'images'
-
-    Image.find_each do |i|
-      file = "#{dir}/#{i.title}_thumb.jpg"
-
-      unless File.exist? file
-        File.open(file, 'w+', encoding: 'ASCII-8BIT') { |f| f.write i.thumbnail_source }
-        puts "Generated thumbnail for #{i.title}"
+    Image.find_each do |img|
+      unless dropbox.ls('images_website/thumbs').find { |e| e.path == img.dropbox_path }
+        dropbox.upload "images_website/thumbs/#{img.title}.jpg", img.thumbnail_source
+        puts "Uploaded thumbnail for #{img.title}"
       end
     end
   end
