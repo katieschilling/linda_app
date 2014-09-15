@@ -5,6 +5,14 @@ class Image < ActiveRecord::Base
     @url ||= source.direct_url.url
   end
 
+  def thumbnail
+    "#{title}_thumb.jpg"
+  end
+
+  def thumbnail_source
+    source.thumbnail size: 'l'
+  end
+
   private
 
   def source

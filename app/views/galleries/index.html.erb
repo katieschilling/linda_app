@@ -3,7 +3,7 @@
     <h1><%= gallery.title %></h1>
     <ul class="row">
       <% gallery.images.each do |image| %>
-        <li><%= image_tag image.url %></li>
+        <li><%= image_tag image.thumbnail %></li>
       <% end %>
     </ul>
   </div>
