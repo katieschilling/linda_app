@@ -1,0 +1,17 @@
+#bio {
+  section {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #333;
+  }
+
+  p {
+    @extend .lead;
+    line-height: 2em;
+  }
+}
