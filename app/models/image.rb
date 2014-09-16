@@ -1,6 +1,10 @@
 class Image < ActiveRecord::Base
   belongs_to :gallery
 
+  def to_param
+    title.parameterize
+  end
+
   def url
     @url ||= source.direct_url.url
   end
