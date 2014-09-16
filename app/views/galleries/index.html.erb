@@ -1,5 +1,5 @@
 <% @galleries.each do |gallery| %>
-  <div class="gallery">
+  <div class="gallery" id="<%= gallery.title.parameterize %>">
     <h1><%= gallery.title %></h1>
     <ul class="row">
       <% gallery.images.each do |image| %>
