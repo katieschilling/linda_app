@@ -6,11 +6,11 @@ class Image < ActiveRecord::Base
   end
 
   def thumbnail
-    @thumbnail ||= thumbnail_file.direct_url.url
+    @thumbnail ||= thumbnail_file.public_url.to_s
   end
 
   def thumbnail_file
-    dropbox.find("images_website/thumbs/#{title}.jpg")
+    s3.objects["thumbs/#{title}.jpg"]
   end
 
   def thumbnail_source

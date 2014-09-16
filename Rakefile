@@ -11,8 +11,10 @@ namespace :dropbox do
   desc 'Generate thumbnails'
   task :thumbnails => :environment do
     Image.find_each do |img|
-      unless dropbox.ls('images_website/thumbs').find { |e| e.path == img.dropbox_path }
-        dropbox.upload "images_website/thumbs/#{img.title}.jpg", img.thumbnail_source
+      thumbnail = s3.objects["thumbs/#{img.title}.jpg"]
+      unless thumbnail.exists?
+        thumbnail.write img.thumbnail_source
+        thumbnail.acl = :public_read
         puts "Uploaded thumbnail for #{img.title}"
       end
     end
